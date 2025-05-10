@@ -1,0 +1,129 @@
+Delivered-To: gusunapillco@gmail.com
+Received: by 2002:a05:6200:381b:b0:590:7cda:5e1a with SMTP id d27csp491388qnz;
+        Thu, 1 May 2025 15:27:03 -0700 (PDT)
+X-Received: by 2002:a17:90b:1c0b:b0:2fc:aaf:74d3 with SMTP id 98e67ed59e1d1-30a42e52ddemr5323027a91.4.1746138423154;
+        Thu, 01 May 2025 15:27:03 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1746138423; cv=none;
+        d=google.com; s=arc-20240605;
+        b=PvVcI98qntFMjuy8f4Zig/YqsTZ0lgmvQqzEI5vNHC7LUPzOHHKRVAWSR9L3ezfR99
+         UKdhG2ND/ZYLp9O5RyptOH8W5nzntVk5BAfwpL4phxTruAYexhgHRKFE2Q6Rtm33je+p
+         y+umPNIJ7WH+4BloSe54XppAICvhDqy0Tyz2sv6maXmUBl6MTtCnB0wUDIFRhAPeQQTP
+         S/lWHcZ+lvzX4JexNtmmR99ocd7JcpSOHXhoZNf4Ou9wsQeWLqFCH/nXQqc60y+URyDD
+         3ETbRc+u3xWZ75CVSydbZ8tWgPSAlqdbfK/5CoWd+Vv10HcQL+m2dWdDXVrS3MUyvENT
+         I/pA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=cc:to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=ZUtMeO0Rzevug54LMKZQsfzFV8muA4NA9375H8ZBfIM=;
+        fh=keTQjlyYV/kUBOuRTQ2qwaMtMtuWNctpdweLYlyD6Bc=;
+        b=GUvEzKaCmDLnwss689c6k6hp/3yklA3QUrjAtSbVOufdxUUCxwcoPJQ0yXMU7rSJYB
+         s2tUO61lMiTxuDi8Eq1ms/TbIU4MQi0Yd0cJgNZEpKbRXhFlbBx6lsnEmPk1f0oEAgPF
+         EABh1JICzmY3Y2AyQt65dcVXRsJNn4crbK3az84RLfdf85xQm1tnkSRgjmI6xgms+nzk
+         eIcNrOVb0eZu42d6RVGB0MxyPyn0+MpfUrez2TyCiMPguohajCoPMDB+G3s2Bf9LBR8p
+         Sl5cjLCINGfkzqiT1xz8owwZHRUoxNxLpRQk3CEucFMHuw1Ak/q633oGnsxDx7M2+fyx
+         300Q==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@fi-uba-ar.20230601.gappssmtp.com header.s=20230601 header.b=MlLUP7hh;
+       spf=pass (google.com: domain of fzacchigna@fi.uba.ar designates 209.85.220.41 as permitted sender) smtp.mailfrom=fzacchigna@fi.uba.ar;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=fi.uba.ar;
+       dara=pass header.i=@gmail.com
+Return-Path: <fzacchigna@fi.uba.ar>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 98e67ed59e1d1-30a347ca48csor3455603a91.3.2025.05.01.15.27.02
+        for <gusunapillco@gmail.com>
+        (Google Transport Security);
+        Thu, 01 May 2025 15:27:03 -0700 (PDT)
+Received-SPF: pass (google.com: domain of fzacchigna@fi.uba.ar designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@fi-uba-ar.20230601.gappssmtp.com header.s=20230601 header.b=MlLUP7hh;
+       spf=pass (google.com: domain of fzacchigna@fi.uba.ar designates 209.85.220.41 as permitted sender) smtp.mailfrom=fzacchigna@fi.uba.ar;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=fi.uba.ar;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=fi-uba-ar.20230601.gappssmtp.com; s=20230601; t=1746138422; x=1746743222; dara=google.com;
+        h=cc:to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=ZUtMeO0Rzevug54LMKZQsfzFV8muA4NA9375H8ZBfIM=;
+        b=MlLUP7hhrUZKFkTgK8czu42NWOOr1D7gmPvZrqmK3qE8Ygjiy7Tj+hz5zsvF/U9OAl
+         +tkZ2agEc2daFzHiVXjRb1Cmv85ZEjF2y450qnhOiQBIW95y6OCz8wNQh2NFnxz2EaS9
+         dbF5b/qVIU5AOBGcxutDYWWxPFfXI847Ak4SsmgepI/AQgpmhGrBAmFB+Vb2o4Fh/hos
+         PXF4ii6Y6VCUeJawEwrDPqs3KeiwI2G9Tg4uF78zYNgC+394LIQyfjXn701P2hCVEDA2
+         B2FmZgCELIl9+MJsZ0LVk/Nmqh824VW0CBH9dcdLaqz0WgMczDwQ5WSHpguy0OaTb3kw
+         dw9Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1746138422; x=1746743222;
+        h=cc:to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=ZUtMeO0Rzevug54LMKZQsfzFV8muA4NA9375H8ZBfIM=;
+        b=WXjQ3pgBxD/9b0mU4HEnHlpxX3ao/EW7tFFnsRpvPr+BtWMmpfxSl+fbQIcjcpgjzs
+         8TxdYJa1nm1e3XBztjinhMqOhY5wGVYx/uJbCIdpqkvZQUz0u+xSjKhEBbDjbAPz4os6
+         XzShSctQbdbFxxz764LLvbE0obMhgUhO+AMdzDXpAz2Vyn5zimjuYbEtGnK9bRGqAp5x
+         QOpI2DFkxC7zUasj9ywUPw6ij2iQKHW0RKcJeOwTlujYmu03d6x7v0Ut3IZHsgaEX6QL
+         7Cy7cF6+Xvq993FcbCiMzpcFKSDda9IvXxVoA9Hmrn1q8pW8X5JZOSEzSuHS/qDKzDKJ
+         +NQw==
+X-Gm-Message-State: AOJu0YyLOaY5KFx9E+ST0J4tmF8to6jBFWp9i6F+kaHn7tvG8uGi6+2C
+	+bF63wr2p2A93dQD+u6VkPQuZ5lqbER04leABYI1R0tef/T5ccO0uf1AmTa6iD0JA3ktHI1h8qB
+	PBL6B9cUG2tC2gA6wFF/+Bt9+aA4IQBqYe4gvij7mkeT3n+ac
+X-Gm-Gg: ASbGncutLH4C8Xh1OAS8qbb8b6kgFjURA2qa4t1IrQ989QV88vJbU6Fp+SZ3yA3mvfX
+	cphwrfHb+vy7/5GaUc0JfcTueVr/ChRhBva9grKIt1UPblHpTsPoHmazl3HBQ7jWDW3L+8pbqji
+	6d0v15pwgBAJiIvvIMnNKVVjlfqlK+GPt5+/tV4X/76iBU9emMfOau
+X-Google-Smtp-Source: AGHT+IGkX3w9ZjG4Cx1XIx7DTLc0MXSWDRrm7CDctYutCfWRlLnBKf0zfEF64Xumuco9Y6MlZj+/6JfoEWeAqklKeZE=
+X-Received: by 2002:a17:90b:2642:b0:2e2:c2b0:d03e with SMTP id
+ 98e67ed59e1d1-30a4e1db4b4mr1188993a91.5.1746138422151; Thu, 01 May 2025
+ 15:27:02 -0700 (PDT)
+MIME-Version: 1.0
+From: "Federico G. Zacchigna" <coordinacion.academica.ia.lse@fi.uba.ar>
+Date: Thu, 1 May 2025 19:26:51 -0300
+X-Gm-Features: ATxdqUE-RPy9fRgBtqMSYfP3hvNkuMwEdoSCMqiKAcXe_1h4lNZBNIutuDk2ju8
+Message-ID: <CAHnYbtD=HGtkMS5sJtKSAip1DKxx1RUkwTqT98bZTi1V+fuxww@mail.gmail.com>
+Subject: =?UTF-8?Q?Sobre_propuesta=3A_Desarrollo_de_un_Modelo_Predictivo_?=
+	=?UTF-8?Q?basado_en_Aprendizaje_Autom=C3=A1tico_para_Trading_Algor=C3=ADtmico_?=
+	=?UTF-8?Q?en_el_Futuro_E=2Dmini_Nasdaq=2D100_=28MNQ=29?=
+To: =?UTF-8?Q?Gustavo_U=C3=B1apillco?= <gusunapillco@gmail.com>
+Cc: Ariel Lutenberg <alutenberg@gmail.com>, PABLO MARTIN GOMEZ <pgomez@fi.uba.ar>, 
+	=?UTF-8?Q?Gesti=C3=B3n_Acad=C3=A9mica_LSE?= <gestion.academica.lse@fi.uba.ar>
+Content-Type: multipart/alternative; boundary="00000000000061a28f06341a889b"
+
+--00000000000061a28f06341a889b
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hola Gustavo,
+La propuesta est=C3=A1 muy bien y queda aprobada, =C2=A1felicitaciones!
+
+Solo quiero mencionar, que no hace falta que te limites a los modelos que
+propon=C3=A9s, pod=C3=A9s explorar otros.
+
+Saludos,
+Federico G. Zacchigna
+Coordinaci=C3=B3n acad=C3=A9mica de IA
+Laboratorio de Sistemas Embebidos
+Facultad de Ingenier=C3=ADa
+Universidad de Buenos Aires
+M=C3=A1s info en https://lse-posgrados.fi.uba.ar/
+[image: https://www.instagram.com/lse.posgrados/]
+<https://www.instagram.com/lse.posgrados/>
+
+--00000000000061a28f06341a889b
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div>Hola Gustavo,</div><div>La propuesta est=C3=A1 muy bi=
+en y queda aprobada, =C2=A1felicitaciones!<br></div><div><br></div><div>Sol=
+o quiero mencionar, que no hace falta que te limites a los modelos que prop=
+on=C3=A9s, pod=C3=A9s explorar otros.</div><div><br></div><div>Saludos,</di=
+v><div><div dir=3D"ltr" class=3D"gmail_signature" data-smartmail=3D"gmail_s=
+ignature"><div dir=3D"ltr"><div><font color=3D"#999999">Federico G. Zacchig=
+na<br></font><span style=3D"color:rgb(153,153,153)">Coordinaci=C3=B3n acad=
+=C3=A9mica de IA</span></div><div><font color=3D"#999999">Laboratorio de Si=
+stemas Embebidos</font></div><div><font color=3D"#999999">Facultad de Ingen=
+ier=C3=ADa</font></div><div><font color=3D"#999999">Universidad de Buenos A=
+ires</font></div><div><font color=3D"#999999">M=C3=A1s info en <a href=3D"h=
+ttps://lse-posgrados.fi.uba.ar/" target=3D"_blank">https://lse-posgrados.fi=
+.uba.ar/</a></font><br><a href=3D"https://www.instagram.com/lse.posgrados/"=
+ style=3D"color:rgb(17,85,204)" target=3D"_blank"><img src=3D"https://ci3.g=
+oogleusercontent.com/mail-sig/AIorK4xKxYfQbPI76CclXczk0cCMNfNMly1HJ4nwInvl-=
+3HSwYxDRki2dO367EHlJs2f41-U1eG9Aps" alt=3D" https://www.instagram.com/lse.p=
+osgrados/" width=3D"200" height=3D"33"></a></div></div></div></div></div>
+
+--00000000000061a28f06341a889b--
